@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shanthi Juniors Play School | Cuddalore</title>
+<meta name="description" content="Shanthi Juniors Play School — A premier early childhood institution in Cuddalore offering Daycare, Playgroup, Nursery, Pre KG, Jr.KG & Sr.KG. Admissions Open 2026–2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   DESIGN SYSTEM — SHANTHI JUNIORS (PREMIUM EDITION)
+   Aesthetic: Editorial luxury — think The Economist meets
+   a top-tier Indian international school prospectus.
+   Palette: Ivory / Warm White / Deep Navy / Antique Gold
+   Typography: Cormorant Garamond (display) + DM Sans (body)
+   ============================================================ */
+
+:root {
+  --navy:       #0F1F3D;
+  --navy-mid:   #1A3060;
+  --navy-soft:  #2C4A7C;
+  --gold:       #B8973A;
+  --gold-light: #D4AF55;
+  --gold-pale:  #F5EDD3;
+  --ivory:      #FDFBF7;
+  --warm-grey:  #F2EFE9;
+  --mid-grey:   #E8E4DC;
+  --rule:       #D6D0C4;
+  --text:       #1C1C1C;
+  --text-mid:   #4A4844;
+  --text-light: #8A8580;
+  --white:      #FFFFFF;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans:  'DM Sans', 'Helvetica Neue', sans-serif;
+
+  --max:        1200px;
+  --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-fast: 0.2s ease;
+}
+
+/* ---------- RESET ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-sans);
+  background: var(--ivory);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { font-family: var(--font-sans); cursor: pointer; border: none; background: none; }
+section { scroll-margin-top: 72px; }
+
+/* ---------- SCROLLBAR ---------- */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+::-webkit-scrollbar-track { background: var(--warm-grey); }
+
+/* ============================================================
+   COMPONENTS
+   ============================================================ */
+
+.rule { display: block; width: 40px; height: 2px; background: var(--gold); margin-bottom: 16px; }
+.rule-center { margin: 0 auto 16px; }
+
+.overline {
+  font-family: var(--font-sans);
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 10px; display: block;
+}
+
+.display-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 600; line-height: 1.15;
+  color: var(--navy); letter-spacing: -0.01em;
+}
+.display-title em { font-style: italic; color: var(--gold); }
+
+.body-text {
+  font-size: 0.94rem; line-height: 1.8;
+  color: var(--text-mid); font-weight: 400;
+}
+
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-sans); font-size: 0.8rem;
+  font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 14px 28px;
+  transition: var(--transition); cursor: pointer;
+  border: none; position: relative; overflow: hidden;
+}
+
+.btn-primary { background: var(--navy); color: var(--white); }
+.btn-primary:hover { background: var(--navy-mid); }
+
+.btn-gold { background: var(--gold); color: var(--white); }
+.btn-gold:hover { background: var(--gold-light); }
+
+.btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.5); }
+.btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+.btn-outline-dark { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
+.btn-outline-dark:hover { background: var(--navy); color: var(--white); }
+
+.btn-green { background: #1A7A50; color: var(--white); }
+.btn-green:hover { background: #155E3D; }
+
+.section { padding: 96px 32px; }
+.section-sm { padding: 64px 32px; }
+.container { max-width: var(--max); margin: 0 auto; }
+.section-header { margin-bottom: 56px; }
+.section-header.centered { text-align: center; }
+.section-header.centered .rule { margin: 0 auto 16px; }
+
+.divider { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(253,251,247,0.96);
+  backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom: 1px solid var(--rule);
+  height: 72px;
+  display: flex; align-items: center;
+  padding: 0 32px;
+  transition: var(--transition);
+}
+.navbar.scrolled { box-shadow: 0 4px 40px rgba(15,31,61,0.08); }
+.navbar-inner {
+  max-width: var(--max); margin: 0 auto; width: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand { display: flex; flex-direction: column; line-height: 1.2; }
+.nav-brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem; font-weight: 600;
+  color: var(--navy); letter-spacing: 0.01em;
+}
+.nav-brand-sub {
+  font-size: 0.62rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-light);
+}
+.nav-links { display: flex; align-items: center; gap: 2px; }
+.nav-links a {
+  font-size: 0.78rem; font-weight: 500;
+  letter-spacing: 0.04em; color: var(--text-mid);
+  padding: 8px 14px;
+  transition: var(--transition-fast);
+  position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute;
+  bottom: 4px; left: 14px; right: 14px;
+  height: 1px; background: var(--gold);
+  transform: scaleX(0); transition: transform 0.3s ease;
+  transform-origin: left;
+}
+.nav-links a:hover { color: var(--navy); }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-admission {
+  font-size: 0.7rem !important; font-weight: 600 !important;
+  letter-spacing: 0.1em !important; text-transform: uppercase;
+  background: var(--gold); color: var(--white) !important;
+  padding: 9px 18px !important;
+}
+.nav-admission::after { display: none !important; }
+.nav-admission:hover { background: var(--gold-light) !important; }
+
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 4px; border: none; background: none;
+}
+.hamburger span {
+  display: block; height: 1.5px; width: 24px;
+  background: var(--navy); transition: var(--transition);
+}
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.mobile-nav {
+  display: none; position: fixed;
+  top: 72px; left: 0; right: 0; z-index: 999;
+  background: var(--ivory); border-bottom: 1px solid var(--rule);
+  padding: 20px 32px 28px;
+  flex-direction: column; gap: 4px;
+  box-shadow: 0 20px 40px rgba(15,31,61,0.08);
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-size: 0.88rem; font-weight: 500;
+  color: var(--text-mid); padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+  transition: var(--transition-fast);
+}
+.mobile-nav a:last-child { border-bottom: none; }
+.mobile-nav a:hover { color: var(--navy); padding-left: 6px; }
+.mobile-nav .mob-cta {
+  margin-top: 12px; background: var(--navy); color: var(--white) !important;
+  text-align: center; padding: 13px 0 !important;
+  font-size: 0.72rem !important; font-weight: 600 !important;
+  letter-spacing: 0.10em; text-transform: uppercase;
+  border-bottom: none !important;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 120px 32px 80px;
+  overflow: hidden;
+}
+/* REPLACE: hero-bg background-image with your actual school/campus photo */
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background-image: url('2026-01-23\ \(5\).webp');
+  background-size: cover; background-position: center 30%;
+}
+.hero-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(10,20,45,0.88) 0%,
+    rgba(15,31,61,0.75) 50%,
+    rgba(15,31,61,0.45) 100%
+  );
+}
+.hero-content {
+  position: relative; z-index: 1;
+  max-width: var(--max); margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.hero-text { max-width: 560px; }
+.hero-eyebrow {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold-light);
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 24px;
+  animation: fadeUp 0.8s 0.1s both;
+}
+.hero-eyebrow::before {
+  content: ''; display: block; width: 32px; height: 1px; background: var(--gold-light);
+}
+.hero-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+  font-weight: 500; line-height: 1.08; letter-spacing: -0.015em;
+  color: var(--white); margin-bottom: 12px;
+  animation: fadeUp 0.8s 0.2s both;
+}
+.hero-heading em { font-style: italic; color: var(--gold-light); }
+.hero-divider {
+  width: 48px; height: 1px; background: var(--gold);
+  margin-bottom: 24px;
+  animation: fadeUp 0.8s 0.3s both;
+}
+.hero-tagline {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 1.15rem; color: rgba(255,255,255,0.65);
+  margin-bottom: 20px;
+  animation: fadeUp 0.8s 0.28s both;
+}
+.hero-desc {
+  font-size: 0.92rem; line-height: 1.75; color: rgba(255,255,255,0.65);
+  margin-bottom: 36px; max-width: 480px;
+  animation: fadeUp 0.8s 0.36s both;
+}
+.hero-btns {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  animation: fadeUp 0.8s 0.44s both;
+}
+.hero-right {
+  display: flex; flex-direction: column; gap: 20px; align-items: flex-end;
+  animation: fadeUp 0.8s 0.3s both;
+}
+.hero-info-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(12px); padding: 24px 28px;
+  min-width: 240px;
+}
+.hero-info-label {
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold-light); margin-bottom: 6px;
+}
+.hero-info-value {
+  font-family: var(--font-serif); font-size: 1.8rem;
+  font-weight: 600; color: var(--white); line-height: 1;
+  margin-bottom: 4px;
+}
+.hero-info-sub { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+.hero-scroll {
+  position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+  z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 8px;
+  color: rgba(255,255,255,0.4); font-size: 0.65rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  animation: fadeUp 0.8s 0.6s both;
+}
+.hero-scroll-line {
+  width: 1px; height: 40px; background: rgba(255,255,255,0.3);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { transform: scaleY(1); opacity: 0.4; }
+  50% { transform: scaleY(0.5); opacity: 0.8; }
+}
+
+/* ============================================================
+   STATS BAND
+   ============================================================ */
+.stats-band { background: var(--navy); padding: 0 32px; }
+.stats-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-left: 1px solid rgba(255,255,255,0.08);
+}
+.stat-item {
+  padding: 40px 32px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  transition: var(--transition);
+}
+.stat-item:hover { background: rgba(255,255,255,0.03); }
+.stat-number {
+  font-family: var(--font-serif);
+  font-size: 2.8rem; font-weight: 600;
+  color: var(--gold-light); line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-label {
+  font-size: 0.75rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.about-img-col { position: relative; }
+.about-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+.about-img-accent {
+  position: absolute; bottom: -24px; right: -24px;
+  background: var(--navy); padding: 28px 32px;
+  border-left: 3px solid var(--gold);
+}
+.about-accent-number {
+  font-family: var(--font-serif); font-size: 2.6rem;
+  font-weight: 600; color: var(--gold-light); line-height: 1;
+}
+.about-accent-label {
+  font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.5); margin-top: 4px;
+}
+.about-text { display: flex; flex-direction: column; gap: 24px; }
+.about-list { display: flex; flex-direction: column; gap: 16px; margin: 8px 0; }
+.about-list-item {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding-bottom: 16px; border-bottom: 1px solid var(--rule);
+}
+.about-list-item:last-child { border-bottom: none; padding-bottom: 0; }
+.about-list-marker {
+  flex-shrink: 0; width: 24px; height: 24px;
+  border: 1px solid var(--gold); display: flex;
+  align-items: center; justify-content: center; margin-top: 2px;
+}
+.about-list-marker svg { width: 12px; height: 12px; stroke: var(--gold); fill: none; stroke-width: 2; }
+.about-list-content h4 {
+  font-family: var(--font-serif); font-size: 1.1rem;
+  font-weight: 600; color: var(--navy); margin-bottom: 3px;
+}
+.about-list-content p { font-size: 0.86rem; line-height: 1.65; color: var(--text-light); }
+
+/* ============================================================
+   PROGRAMS
+   ============================================================ */
+.programs-section { background: var(--warm-grey); }
+.programs-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.program-card {
+  background: var(--ivory); padding: 36px 32px;
+  transition: var(--transition); position: relative;
+  overflow: hidden;
+}
+.program-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; background: var(--gold);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.program-card:hover { background: var(--white); }
+.program-card:hover::before { transform: scaleX(1); }
+.program-number {
+  font-family: var(--font-serif); font-size: 3rem; font-weight: 400;
+  color: var(--mid-grey); line-height: 1; margin-bottom: 20px;
+  transition: var(--transition);
+}
+.program-card:hover .program-number { color: var(--gold-pale); }
+.program-name {
+  font-family: var(--font-serif); font-size: 1.35rem; font-weight: 600;
+  color: var(--navy); margin-bottom: 6px; line-height: 1.2;
+}
+.program-age {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.10em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+  display: block;
+}
+.program-desc { font-size: 0.85rem; line-height: 1.7; color: var(--text-light); }
+.program-link {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 18px;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.10em;
+  text-transform: uppercase; color: var(--navy);
+  transition: var(--transition); opacity: 0;
+}
+.program-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; transition: transform 0.3s ease; }
+.program-card:hover .program-link { opacity: 1; }
+.program-card:hover .program-link svg { transform: translateX(3px); }
+
+/* ============================================================
+   FACILITIES
+   ============================================================ */
+.facilities-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+}
+.facilities-img-col { position: relative; }
+.facilities-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; }
+.facilities-img-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(10,20,45,0.8) 0%, transparent 60%);
+  padding: 28px 24px;
+}
+.facilities-img-caption {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 1rem; color: rgba(255,255,255,0.75);
+}
+.facilities-list { display: flex; flex-direction: column; gap: 0; }
+.facility-item {
+  display: grid; grid-template-columns: 56px 1fr;
+  gap: 20px; align-items: start;
+  padding: 24px 0; border-bottom: 1px solid var(--rule);
+  transition: var(--transition);
+}
+.facility-item:first-child { padding-top: 0; }
+.facility-item:last-child { border-bottom: none; }
+.facility-item:hover { padding-left: 8px; }
+.facility-icon-wrap {
+  width: 40px; height: 40px;
+  border: 1px solid var(--rule);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 2px;
+  transition: var(--transition);
+}
+.facility-item:hover .facility-icon-wrap { border-color: var(--gold); background: var(--gold-pale); }
+.facility-icon-wrap svg { width: 18px; height: 18px; stroke: var(--navy); fill: none; stroke-width: 1.5; transition: var(--transition); }
+.facility-item:hover .facility-icon-wrap svg { stroke: var(--gold); }
+.facility-text h4 {
+  font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600;
+  color: var(--navy); margin-bottom: 4px;
+}
+.facility-text p { font-size: 0.84rem; line-height: 1.65; color: var(--text-light); }
+
+/* ============================================================
+   WHY CHOOSE US
+   ============================================================ */
+.why-section { background: var(--navy); color: var(--white); }
+.why-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.why-item {
+  padding: 44px 40px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: var(--transition);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.why-item:nth-child(2n) { border-right: none; }
+.why-item:nth-last-child(-n+2) { border-bottom: none; }
+.why-item:hover { background: rgba(255,255,255,0.04); }
+.why-icon { width: 36px; height: 36px; margin-bottom: 4px; display: flex; align-items: center; }
+.why-icon svg { width: 28px; height: 28px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+.why-title {
+  font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600;
+  color: var(--white);
+}
+.why-desc { font-size: 0.86rem; line-height: 1.75; color: rgba(255,255,255,0.5); }
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+.gallery-section { background: var(--warm-grey); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 280px 280px;
+  gap: 8px;
+}
+.gallery-cell { overflow: hidden; position: relative; }
+.gallery-cell img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.7s ease, filter 0.5s ease;
+  filter: saturate(0.85);
+}
+.gallery-cell:hover img { transform: scale(1.05); filter: saturate(1); }
+/* REPLACE: all gallery images with actual school photos */
+.gc-1 { grid-column: span 5; }
+.gc-2 { grid-column: span 3; }
+.gc-3 { grid-column: span 4; }
+.gc-4 { grid-column: span 4; }
+.gc-5 { grid-column: span 4; }
+.gc-6 { grid-column: span 4; }
+.gallery-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,20,45,0.6) 0%, transparent 55%);
+  opacity: 0; transition: opacity 0.4s ease;
+  display: flex; align-items: flex-end; padding: 16px;
+}
+.gallery-cell:hover .gallery-overlay { opacity: 1; }
+.gallery-caption {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: rgba(255,255,255,0.85);
+}
+
+/* ============================================================
+   ADMISSIONS
+   ============================================================ */
+.admissions-section {
+  position: relative; overflow: hidden;
+  padding: 96px 32px;
+}
+/* REPLACE: admissions-bg background-image with school photo */
+.admissions-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1400&q=80');
+  background-size: cover; background-position: center;
+}
+.admissions-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(10, 20, 45, 0.88);
+}
+.admissions-inner {
+  position: relative; z-index: 1;
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr auto; gap: 80px; align-items: center;
+}
+.admissions-text .overline { color: var(--gold-light); }
+.admissions-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
+  color: var(--white); line-height: 1.15; margin-bottom: 16px;
+}
+.admissions-heading em { font-style: italic; color: var(--gold-light); }
+.admissions-desc { font-size: 0.92rem; line-height: 1.75; color: rgba(255,255,255,0.55); }
+.admissions-cta { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; flex-shrink: 0; }
+.admissions-note {
+  font-size: 0.7rem; letter-spacing: 0.06em; color: rgba(255,255,255,0.3);
+  text-transform: uppercase; margin-top: 4px;
+}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+}
+.contact-details { display: flex; flex-direction: column; gap: 0; }
+.contact-row {
+  display: grid; grid-template-columns: 64px 1fr;
+  gap: 20px; padding: 28px 0;
+  border-bottom: 1px solid var(--rule); align-items: start;
+}
+.contact-row:first-child { padding-top: 0; }
+.contact-icon-box {
+  width: 40px; height: 40px; border: 1px solid var(--rule);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 2px;
+}
+.contact-icon-box svg { width: 18px; height: 18px; stroke: var(--navy); fill: none; stroke-width: 1.5; }
+.contact-label {
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 8px; display: block;
+}
+.contact-value { font-size: 0.92rem; color: var(--text); font-weight: 500; line-height: 1.6; }
+.contact-link { display: block; color: var(--navy); font-weight: 600; font-size: 1rem; transition: var(--transition-fast); }
+.contact-link:hover { color: var(--gold); }
+.contact-action-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.btn-sm { padding: 10px 20px !important; font-size: 0.72rem !important; }
+.map-frame { width: 100%; height: 420px; border: 1px solid var(--rule); }
+.map-frame iframe { width: 100%; height: 100%; border: none; display: block; }
+.map-caption { font-size: 0.75rem; color: var(--text-light); margin-top: 10px; letter-spacing: 0.04em; }
+
+/* ============================================================
+   ENQUIRY SECTION
+   ============================================================ */
+.enquiry-section { background: var(--warm-grey); }
+.enquiry-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+}
+.enquiry-form-inner {
+  background: var(--white); padding: 48px 40px;
+  border-top: 3px solid var(--gold);
+}
+.form-title {
+  font-family: var(--font-serif); font-size: 1.8rem; font-weight: 600;
+  color: var(--navy); margin-bottom: 6px;
+}
+.form-subtitle { font-size: 0.86rem; color: var(--text-light); margin-bottom: 32px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 20px; }
+.form-label {
+  display: block; font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.10em; text-transform: uppercase;
+  color: var(--text-mid); margin-bottom: 8px;
+}
+.form-field {
+  width: 100%; padding: 12px 16px;
+  border: 1px solid var(--rule); background: var(--ivory);
+  font-family: var(--font-sans); font-size: 0.88rem; color: var(--text);
+  outline: none; transition: var(--transition-fast);
+  -webkit-appearance: none;
+}
+.form-field:focus {
+  border-color: var(--navy); background: var(--white);
+  box-shadow: 0 0 0 3px rgba(15,31,61,0.06);
+}
+.form-textarea { min-height: 100px; resize: vertical; }
+.form-submit {
+  width: 100%; padding: 15px;
+  background: var(--navy); color: var(--white);
+  font-family: var(--font-sans); font-size: 0.75rem;
+  font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  border: none; cursor: pointer; transition: var(--transition);
+}
+.form-submit:hover { background: var(--navy-mid); }
+.form-success {
+  display: none; padding: 20px; background: var(--warm-grey);
+  border-left: 3px solid var(--gold); margin-top: 16px;
+}
+.form-success.show { display: block; }
+.form-success p { font-size: 0.88rem; color: var(--text-mid); }
+.enquiry-info { display: flex; flex-direction: column; gap: 24px; padding-top: 8px; }
+.enquiry-highlight { background: var(--navy); padding: 36px; }
+.enquiry-highlight .overline { color: var(--gold-light); }
+.enquiry-highlight h3 {
+  font-family: var(--font-serif); font-size: 1.6rem; font-weight: 600;
+  color: var(--white); margin-bottom: 16px; line-height: 1.2;
+}
+.enquiry-highlight p { font-size: 0.86rem; line-height: 1.75; color: rgba(255,255,255,0.55); margin-bottom: 24px; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer { background: #080E1C; padding: 72px 32px 32px; }
+.footer-top {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 2.2fr 1fr 1fr 1.5fr;
+  gap: 48px; padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 32px;
+}
+.footer-brand-name {
+  font-family: var(--font-serif); font-size: 1.3rem; font-weight: 600;
+  color: var(--white); margin-bottom: 4px;
+}
+.footer-brand-tag {
+  font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px; display: block;
+}
+.footer-brand-desc { font-size: 0.83rem; line-height: 1.8; color: rgba(255,255,255,0.35); margin-bottom: 24px; }
+.footer-rule { width: 32px; height: 1px; background: var(--gold); margin-bottom: 24px; }
+.footer-col-title {
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 20px;
+}
+.footer-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-links a { font-size: 0.84rem; color: rgba(255,255,255,0.45); transition: var(--transition-fast); }
+.footer-links a:hover { color: var(--gold); padding-left: 4px; }
+.footer-contact-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+.footer-contact-icon { flex-shrink: 0; margin-top: 1px; }
+.footer-contact-icon svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+.footer-contact-text { font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.6; }
+.footer-contact-text a { color: rgba(255,255,255,0.6); transition: var(--transition-fast); }
+.footer-contact-text a:hover { color: var(--gold); }
+.footer-bottom {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+}
+.footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.22); }
+.footer-copy strong { color: rgba(255,255,255,0.38); }
+
+/* ============================================================
+   WHATSAPP FLOAT
+   ============================================================ */
+.wa-float {
+  position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+  width: 48px; height: 48px;
+  background: #1A7A50; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 24px rgba(26,122,80,0.40);
+  transition: var(--transition); text-decoration: none;
+}
+.wa-float:hover { background: #155E3D; transform: translateY(-2px); box-shadow: 0 6px 30px rgba(26,122,80,0.50); }
+.wa-float svg { width: 24px; height: 24px; }
+.wa-tooltip {
+  position: absolute; right: 58px; top: 50%; transform: translateY(-50%);
+  background: var(--navy); color: var(--white); padding: 6px 12px;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em;
+  white-space: nowrap; opacity: 0; pointer-events: none; transition: var(--transition-fast);
+}
+.wa-float:hover .wa-tooltip { opacity: 1; }
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+.reveal, .reveal-l, .reveal-r {
+  opacity: 0; transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal { transform: translateY(28px); }
+.reveal-l { transform: translateX(-28px); }
+.reveal-r { transform: translateX(28px); }
+.visible { opacity: 1 !important; transform: none !important; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .hero-content { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .about-grid, .facilities-grid { grid-template-columns: 1fr; gap: 48px; }
+  .about-img-accent { bottom: -16px; right: -16px; }
+  .programs-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: 1fr; }
+  .why-item:nth-child(2n) { border-right: 1px solid rgba(255,255,255,0.08); }
+  .why-item:last-child { border-bottom: none; }
+  .gallery-grid { grid-template-rows: 200px 200px; }
+  .admissions-inner { grid-template-columns: 1fr; gap: 36px; }
+  .admissions-cta { flex-direction: row; }
+  .contact-grid, .enquiry-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+}
+@media (max-width: 640px) {
+  .section { padding: 64px 20px; }
+  .section-sm { padding: 48px 20px; }
+  .navbar { padding: 0 20px; }
+  .hero { padding: 100px 20px 72px; }
+  .hero-heading { font-size: 2.6rem; }
+  .hero-btns { flex-direction: column; gap: 10px; }
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+  .stat-item { padding: 28px 20px; }
+  .programs-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 180px); }
+  .gc-1 { grid-column: span 2; }
+  .gc-2, .gc-3, .gc-4, .gc-5, .gc-6 { grid-column: span 1; }
+  .why-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .enquiry-form-inner { padding: 28px 20px; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .mobile-nav { padding: 20px; }
+  .admissions-cta { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- ====================================================
+     NAVBAR
+     ==================================================== -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="#home" class="nav-brand" aria-label="Shanthi Juniors Play School">
+      <span class="nav-brand-name">Shanthi Juniors</span>
+      <span class="nav-brand-sub">Play School &nbsp;&bull;&nbsp; Cuddalore</span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#programs">Programmes</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a href="#admissions" class="nav-admission">Admissions Open</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="closeNav()">About</a>
+  <a href="#programs" onclick="closeNav()">Programmes</a>
+  <a href="#facilities" onclick="closeNav()">Facilities</a>
+  <a href="#gallery" onclick="closeNav()">Gallery</a>
+  <a href="#contact" onclick="closeNav()">Contact</a>
+  <a href="#admissions" class="mob-cta" onclick="closeNav()">Admissions Open — 2026–2027</a>
+</div>
+
+<!-- ====================================================
+     HERO
+     ==================================================== -->
+<section class="hero" id="home">
+  <!-- REPLACE: Update .hero-bg background-image in CSS with actual school campus photograph -->
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Cuddalore, Tamil Nadu</div>
+      <h1 class="hero-heading">Shanthi<br><em>Juniors</em><br>Play School</h1>
+      <div class="hero-divider"></div>
+      <p class="hero-tagline">Where Learning Begins with Excellence</p>
+      <p class="hero-desc">A premier early childhood institution dedicated to nurturing young minds through a structured, caring, and academically enriching environment.</p>
+      <div class="hero-btns">
+        <a href="#enquiry" class="btn btn-gold">Enquire Now</a>
+        <a href="tel:9486187606" class="btn btn-outline">Call Now</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-info-card">
+        <div class="hero-info-label">Academic Year</div>
+        <div class="hero-info-value">2026–27</div>
+        <div class="hero-info-sub">Admissions Now Open</div>
+      </div>
+      <div class="hero-info-card">
+        <div class="hero-info-label">Students Enrolled</div>
+        <div class="hero-info-value">500+</div>
+        <div class="hero-info-sub">Happy Learners</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ====================================================
+     STATS BAND
+     ==================================================== -->
+<div class="stats-band">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-number">500+</div>
+      <div class="stat-label">Students Enrolled</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">15+</div>
+      <div class="stat-label">Qualified Educators</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">6</div>
+      <div class="stat-label">Academic Programmes</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">10+</div>
+      <div class="stat-label">Years of Excellence</div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================
+     ABOUT
+     ==================================================== -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-col reveal-l">
+        <!-- REPLACE: with actual school / classroom image -->
+        <img
+          class="about-img"
+          src="papa.png"
+          alt="Students learning at Shanthi Juniors"
+          loading="lazy"
+        />
+        <div class="about-img-accent">
+          <div class="about-accent-number">10+</div>
+          <div class="about-accent-label">Years of Trust</div>
+        </div>
+      </div>
+      <div class="about-text reveal-r">
+        <div>
+          <span class="overline">About the Institution</span>
+          <span class="rule"></span>
+          <h2 class="display-title">Building the <em>Foundation</em><br>of a Brilliant Future</h2>
+        </div>
+        <p class="body-text">Shanthi Juniors Play School is a distinguished early childhood institution committed to delivering world-class foundational education. Our approach combines structured academics with experiential learning, ensuring every child develops the skills, confidence, and character needed for lifelong success.</p>
+        <div class="about-list">
+          <div class="about-list-item">
+            <div class="about-list-marker">
+              <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
+            </div>
+            <div class="about-list-content">
+              <h4>Safe &amp; Secure Environment</h4>
+              <p>CCTV-monitored premises, trained staff, and rigorous safety protocols ensure complete security for every child.</p>
+            </div>
+          </div>
+          <div class="about-list-item">
+            <div class="about-list-marker">
+              <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
+            </div>
+            <div class="about-list-content">
+              <h4>Activity-Based Learning</h4>
+              <p>Our curriculum integrates hands-on exploration with structured lessons, supporting deep conceptual understanding.</p>
+            </div>
+          </div>
+          <div class="about-list-item">
+            <div class="about-list-marker">
+              <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
+            </div>
+            <div class="about-list-content">
+              <h4>Holistic Development Focus</h4>
+              <p>Equal emphasis on cognitive, emotional, social, and physical development across all age groups.</p>
+            </div>
+          </div>
+          <div class="about-list-item">
+            <div class="about-list-marker">
+              <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
+            </div>
+            <div class="about-list-content">
+              <h4>Certified &amp; Experienced Faculty</h4>
+              <p>All educators hold recognized early childhood certifications and undergo continuous professional development.</p>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-primary" style="align-self:flex-start;margin-top:8px;">Request a School Visit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ====================================================
+     PROGRAMS
+     ==================================================== -->
+<section class="section programs-section" id="programs">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="overline">Academic Programmes</span>
+      <span class="rule"></span>
+      <h2 class="display-title">Structured Pathways for <em>Every Stage</em></h2>
+    </div>
+    <div class="programs-grid reveal">
+      <div class="program-card">
+        <div class="program-number">01</div>
+        <div class="program-name">Daycare</div>
+        <span class="program-age">6 Months — 2 Years</span>
+        <p class="program-desc">A warm, professionally supervised care environment for infants and toddlers, ensuring safety, stimulation, and emotional security throughout the day.</p>
+        <span class="program-link">
+          Learn More
+          <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+        </span>
+      </div>
+      <div class="program-card">
+        <div class="program-number">02</div>
+        <div class="program-name">Playgroup</div>
+        <span class="program-age">1.5 — 2.5 Years</span>
+        <p class="program-desc">Structured play-based introduction to learning, developing motor skills, language, and social interaction through guided discovery and exploration.</p>
+        <span class="program-link">
+          Learn More
+          <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+        </span>
+      </div>
+      <div class="program-card">
+        <div class="program-number">03</div>
+        <div class="program-name">Nursery</div>
+        <span class="program-age">2.5 — 3.5 Years</span>
+        <p class="program-desc">Building early literacy and numeracy foundations through a carefully designed curriculum that balances structured learning with creative expression.</p>
+        <span class="program-link">
+          Learn More
+          <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+        </span>
+      </div>
+      <div class="program-card">
+        <div class="program-number">04</div>
+        <div class="program-name">Pre-KG</div>
+        <span class="program-age">3 — 4 Years</span>
+        <p class="program-desc">Strengthening school readiness through language development, logical reasoning, and structured classroom routines that build confidence and discipline.</p>
+        <span class="program-link">
+          Learn More
+          <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+        </span>
+      </div>
+      <div class="program-card">
+        <div class="program-number">05</div>
+        <div class="program-name">Junior KG</div>
+        <span class="program-age">4 — 5 Years</span>
+        <p class="program-desc">Advancing reading readiness, early mathematical concepts, and critical thinking skills through an engaging, concept-driven academic curriculum.</p>
+        <span class="program-link">
+          Learn More
+          <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+        </span>
+      </div>
+      <div class="program-card">
+        <div class="program-number">06</div>
+        <div class="program-name">Senior KG</div>
+        <span class="program-age">5 — 6 Years</span>
+        <p class="program-desc">Comprehensive preparation for primary school covering reading, writing, arithmetic, and collaborative skills to ensure a confident transition to Class I.</p>
+        <span class="program-link">
+          Learn More
+          <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     FACILITIES
+     ==================================================== -->
+<section class="section" id="facilities">
+  <div class="container">
+    <div class="facilities-grid">
+      <div class="facilities-img-col reveal-l">
+        <!-- REPLACE: with actual campus / classroom photo -->
+        <img
+          class="facilities-img"
+          src="faaa.png"
+          alt="Shanthi Juniors campus facilities"
+          loading="lazy"
+        />
+        <div class="facilities-img-overlay">
+          <p class="facilities-img-caption">"An environment built for inquiry, discovery, and growth."</p>
+        </div>
+      </div>
+      <div class="reveal-r">
+        <span class="overline">Campus &amp; Infrastructure</span>
+        <span class="rule"></span>
+        <h2 class="display-title" style="margin-bottom:40px;">World-Class <em>Facilities</em></h2>
+        <div class="facilities-list">
+          <div class="facility-item">
+            <div class="facility-icon-wrap">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="facility-text">
+              <h4>Safe &amp; Secure Campus</h4>
+              <p>24/7 CCTV surveillance, biometric entry, and trained security personnel provide a safe, controlled environment.</p>
+            </div>
+          </div>
+          <div class="facility-item">
+            <div class="facility-icon-wrap">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <div class="facility-text">
+              <h4>Modern Learning Infrastructure</h4>
+              <p>Smart boards, audio-visual classrooms, and age-appropriate learning materials aligned with current pedagogical standards.</p>
+            </div>
+          </div>
+          <div class="facility-item">
+            <div class="facility-icon-wrap">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="facility-text">
+              <h4>Qualified Teaching Staff</h4>
+              <p>All educators hold recognized early childhood certifications and undergo continuous professional development training.</p>
+            </div>
+          </div>
+          <div class="facility-item">
+            <div class="facility-icon-wrap">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="facility-text">
+              <h4>Structured Daily Routine</h4>
+              <p>A balanced schedule incorporating academics, creative activities, outdoor play, and rest for optimal child development.</p>
+            </div>
+          </div>
+          <div class="facility-item">
+            <div class="facility-icon-wrap">
+              <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="facility-text">
+              <h4>Child-Centred Environment</h4>
+              <p>Purpose-designed spaces with child-safe furniture, outdoor play areas, and sensory zones built to stimulate learning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     WHY CHOOSE US
+     ==================================================== -->
+<section class="section why-section" id="why">
+  <div class="container">
+    <div class="section-header centered reveal" style="margin-bottom:48px;">
+      <span class="overline" style="color:var(--gold-light);">Why Shanthi Juniors</span>
+      <span class="rule rule-center" style="background:var(--gold);"></span>
+      <h2 class="display-title" style="color:var(--white);">The Standard of <em>Early Excellence</em></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="why-title">Expert Curriculum Design</div>
+        <p class="why-desc">Our curriculum is developed in alignment with NCERT guidelines and international early childhood frameworks, ensuring academic rigour from the very beginning.</p>
+      </div>
+      <div class="why-item reveal" style="transition-delay:0.1s">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div class="why-title">Research-Backed Pedagogy</div>
+        <p class="why-desc">Teaching methods grounded in child development research, balancing structured instruction with exploration to cultivate independent thinking and curiosity.</p>
+      </div>
+      <div class="why-item reveal" style="transition-delay:0.05s">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        </div>
+        <div class="why-title">Professionally Certified Educators</div>
+        <p class="why-desc">Every teacher undergoes rigorous screening, qualification verification, and ongoing professional development in early childhood education.</p>
+      </div>
+      <div class="why-item reveal" style="transition-delay:0.15s">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="why-title">Measurable Learning Outcomes</div>
+        <p class="why-desc">Regular assessments, detailed progress reports, and parent-teacher communication ensure transparency and consistent monitoring of each child's development.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     GALLERY
+     ==================================================== -->
+<section class="section gallery-section" id="gallery">
+  <div class="container">
+    <div class="section-header reveal" style="margin-bottom:40px;">
+      <span class="overline">Campus Gallery</span>
+      <span class="rule"></span>
+      <h2 class="display-title">Life at <em>Shanthi Juniors</em></h2>
+    </div>
+    <!-- REPLACE: All gallery images below with actual school photographs -->
+    <div class="gallery-grid reveal">
+      <div class="gallery-cell gc-1">
+        <img src="unnamed (12).webp" alt="Students studying" loading="lazy"/>
+        <div class="gallery-overlay"><span class="gallery-caption">Academic Excellence</span></div>
+      </div>
+      <div class="gallery-cell gc-2">
+        <img src="2026-01-23 (4).webp" alt="Classroom" loading="lazy"/>
+        <div class="gallery-overlay"><span class="gallery-caption">Modern Classrooms</span></div>
+      </div>
+      <div class="gallery-cell gc-3">
+        <img src="2026-01-23 (2).webp" alt="School campus" loading="lazy"/>
+        <div class="gallery-overlay"><span class="gallery-caption">Our Campus</span></div>
+      </div>
+      <div class="gallery-cell gc-4">
+        <img src="unnamed (2).webp" alt="Library" loading="lazy"/>
+        <div class="gallery-overlay"><span class="gallery-caption">Resource Centre</span></div>
+      </div>
+      <div class="gallery-cell gc-5">
+        <img src="unnamed (6).webp" alt="Activities" loading="lazy"/>
+        <div class="gallery-overlay"><span class="gallery-caption">Creative Activities</span></div>
+      </div>
+      <div class="gallery-cell gc-6">
+        <img src="unnamed (8).webp" alt="Outdoor" loading="lazy"/>
+        <div class="gallery-overlay"><span class="gallery-caption">Outdoor Learning</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     ADMISSIONS
+     ==================================================== -->
+<div class="admissions-section" id="admissions">
+  <!-- REPLACE: Update .admissions-bg background-image in CSS with school photo -->
+  <div class="admissions-bg"></div>
+  <div class="admissions-inner">
+    <div class="admissions-text reveal-l">
+      <span class="overline">Enrolment 2026–2027</span>
+      <div style="width:40px;height:1px;background:var(--gold);margin-bottom:16px;"></div>
+      <h2 class="admissions-heading">Admissions Now<br><em>Open</em> for 2026–27</h2>
+      <p class="admissions-desc">Secure your child's place at Shanthi Juniors for the forthcoming academic year. Limited seats are available across all programmes. Early enrolment is strongly advised.</p>
+    </div>
+    <div class="admissions-cta reveal-r">
+      <a href="#enquiry" class="btn btn-gold">Apply Now</a>
+      <a href="tel:9486187606" class="btn btn-outline">Call to Enquire</a>
+      <p class="admissions-note">Limited seats — Early enrolment advised</p>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================
+     CONTACT
+     ==================================================== -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="overline">Get in Touch</span>
+      <span class="rule"></span>
+      <h2 class="display-title">Contact the <em>Admissions Office</em></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-details reveal-l">
+        <div class="contact-row">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <span class="contact-label">Phone Numbers</span>
+            <a href="tel:9486187606" class="contact-link">94861 87606</a>
+            <a href="tel:9600337614" class="contact-link">96003 37614</a>
+            <div class="contact-action-row">
+              <a href="tel:9486187606" class="btn btn-primary btn-sm">Call Now</a>
+              <a href="https://wa.me/919486187606?text=Hi%2C%20I%20want%20to%20enquire%20about%20admissions%20at%20Shanthi%20Juniors%20Play%20School." target="_blank" class="btn btn-green btn-sm">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <span class="contact-label">Address</span>
+            <p class="contact-value">20, Bashyam Reddy Street I,<br>Manjakuppam, Cuddalore — 607001<br>Tamil Nadu, India</p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <span class="contact-label">School Hours</span>
+            <p class="contact-value">Monday — Saturday<br>8:00 AM to 5:00 PM<br><span style="font-size:0.82rem;color:var(--text-light);">Sunday: Closed</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-r">
+        <div class="map-frame">
+          <!-- REPLACE: Paste your Google Maps embed iframe src here -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.1234!2d79.7715!3d11.7480!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sManjakuppam%2C+Cuddalore%2C+Tamil+Nadu+607001!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Shanthi Juniors Play School — Cuddalore">
+          </iframe>
+        </div>
+        <p class="map-caption">20, Bashyam Reddy Street I, Manjakuppam, Cuddalore — 607001</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     ENQUIRY SECTION
+     ==================================================== -->
+<section class="section enquiry-section" id="enquiry">
+  <div class="container">
+    <div class="enquiry-grid">
+      <div class="enquiry-info reveal-l">
+        <div class="enquiry-highlight">
+          <span class="overline">2026–2027 Admissions</span>
+          <div style="width:32px;height:1px;background:var(--gold);margin-bottom:16px;"></div>
+          <h3>Request an Admission Enquiry</h3>
+          <p>Submit your details and a member of our admissions team will contact you within one working day to discuss available programmes, fees, and the enrolment process.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <a href="tel:9486187606" class="btn btn-gold" style="justify-content:center;">Call: 94861 87606</a>
+            <a href="https://wa.me/919486187606" target="_blank" class="btn btn-green" style="justify-content:center;">WhatsApp Us</a>
+          </div>
+        </div>
+        <div style="padding:28px 0;border-top:1px solid var(--rule);">
+          <span class="overline">Visit Our School</span>
+          <p class="body-text" style="margin-top:8px;">We welcome parents for a campus tour Monday through Saturday. Contact us to schedule your visit and meet our faculty in person.</p>
+        </div>
+      </div>
+      <div class="reveal-r">
+        <div class="enquiry-form-inner">
+          <h3 class="form-title">Admission Enquiry</h3>
+          <p class="form-subtitle">All fields marked * are required. We respond within 24 hours.</p>
+          <form id="enquiryForm" onsubmit="handleSubmit(event)" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="parentName">Parent / Guardian Name *</label>
+                <input type="text" id="parentName" class="form-field" placeholder="Full name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone Number *</label>
+                <input type="tel" id="phone" class="form-field" placeholder="Mobile number" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="childAge">Programme Interest *</label>
+              <select id="childAge" class="form-field" required>
+                <option value="" disabled selected>Select child's age group</option>
+                <option>Daycare (6 months – 2 years)</option>
+                <option>Playgroup (1.5 – 2.5 years)</option>
+                <option>Nursery (2.5 – 3.5 years)</option>
+                <option>Pre-KG (3 – 4 years)</option>
+                <option>Junior KG (4 – 5 years)</option>
+                <option>Senior KG (5 – 6 years)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Additional Message</label>
+              <textarea id="message" class="form-field form-textarea" placeholder="Any specific requirements or questions…"></textarea>
+            </div>
+            <button type="submit" class="form-submit">Submit Enquiry</button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <p>Thank you. Your enquiry has been received. Our admissions team will contact you within one working day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     FOOTER
+     ==================================================== -->
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Shanthi Juniors Play School</div>
+      <span class="footer-brand-tag">Cuddalore, Tamil Nadu</span>
+      <div class="footer-rule"></div>
+      <p class="footer-brand-desc">A premier early childhood institution dedicated to nurturing the minds, character, and potential of every child entrusted to our care. Excellence in early education.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#programs">Programmes</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#admissions">Admissions</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Programmes</div>
+      <ul class="footer-links">
+        <li><a href="#programs">Daycare</a></li>
+        <li><a href="#programs">Playgroup</a></li>
+        <li><a href="#programs">Nursery</a></li>
+        <li><a href="#programs">Pre-KG</a></li>
+        <li><a href="#programs">Junior KG</a></li>
+        <li><a href="#programs">Senior KG</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-contact-row">
+        <div class="footer-contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <span class="footer-contact-text">20, Bashyam Reddy Street I,<br>Manjakuppam, Cuddalore — 607001</span>
+      </div>
+      <div class="footer-contact-row">
+        <div class="footer-contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg>
+        </div>
+        <div class="footer-contact-text">
+          <a href="tel:9486187606">94861 87606</a><br>
+          <a href="tel:9600337614">96003 37614</a>
+        </div>
+      </div>
+      <div class="footer-contact-row">
+        <div class="footer-contact-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <span class="footer-contact-text">Mon – Sat: 8:00 AM – 5:00 PM</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 <strong>Shanthi Juniors Play School</strong>. All rights reserved.</p>
+    <p class="footer-copy">Manjakuppam, Cuddalore, Tamil Nadu</p>
+  </div>
+</footer>
+
+<!-- ====================================================
+     WHATSAPP FLOAT — subtle, premium
+     ==================================================== -->
+<a
+  href="https://wa.me/919486187606?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20admissions%20at%20Shanthi%20Juniors%20Play%20School."
+  target="_blank"
+  class="wa-float"
+  aria-label="Chat on WhatsApp"
+>
+  <div class="wa-tooltip">WhatsApp Us</div>
+  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 3C8.82 3 3 8.82 3 16c0 2.42.65 4.68 1.78 6.63L3 29l6.55-1.72A13 13 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3z" fill="white"/>
+    <path d="M21.5 18.9c-.3-.15-1.76-.87-2.03-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.64-.93-2.24-.24-.59-.49-.5-.68-.51h-.58c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z" fill="#1A7A50"/>
+  </svg>
+</a>
+
+<script>
+  // — Navbar scroll effect —
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 30);
+  }, { passive: true });
+
+  // — Mobile nav —
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+  function closeNav() {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+  }
+  document.addEventListener('click', e => {
+    if (!navbar.contains(e.target) && !mobileNav.contains(e.target)) closeNav();
+  });
+
+  // — Smooth scroll —
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  // — Scroll reveal —
+  const revealEls = document.querySelectorAll('.reveal, .reveal-l, .reveal-r');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+  revealEls.forEach(el => io.observe(el));
+
+  // — Enquiry form —
+  function handleSubmit(e) {
+    e.preventDefault();
+    const name    = document.getElementById('parentName').value.trim();
+    const phone   = document.getElementById('phone').value.trim();
+    const age     = document.getElementById('childAge').value;
+    const message = document.getElementById('message').value.trim();
+    if (!name || !phone || !age) { alert('Please complete all required fields.'); return; }
+    document.getElementById('formSuccess').classList.add('show');
+    document.getElementById('enquiryForm').style.display = 'none';
+    const text = `Hello%2C%20I%20would%20like%20to%20enquire%20about%20admissions%20at%20Shanthi%20Juniors.%0AName%3A%20${encodeURIComponent(name)}%0APhone%3A%20${encodeURIComponent(phone)}%0AProgramme%3A%20${encodeURIComponent(age)}%0AMessage%3A%20${encodeURIComponent(message||'—')}`;
+    setTimeout(() => window.open(`https://wa.me/919486187606?text=${text}`, '_blank'), 600);
+  }
+</script>
+</body>
+</html>
