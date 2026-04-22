@@ -10,14 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 
-/* ============================================================
-   DESIGN SYSTEM — SHANTHI JUNIORS (PREMIUM EDITION)
-   Aesthetic: Editorial luxury — think The Economist meets
-   a top-tier Indian international school prospectus.
-   Palette: Ivory / Warm White / Deep Navy / Antique Gold
-   Typography: Cormorant Garamond (display) + DM Sans (body)
-   ============================================================ */
-
 :root {
   --navy:       #0F1F3D;
   --navy-mid:   #1A3060;
@@ -42,7 +34,6 @@
   --transition-fast: 0.2s ease;
 }
 
-/* ---------- RESET ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
@@ -58,7 +49,6 @@ ul { list-style: none; }
 button { font-family: var(--font-sans); cursor: pointer; border: none; background: none; }
 section { scroll-margin-top: 72px; }
 
-/* ---------- SCROLLBAR ---------- */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-thumb { background: var(--gold); }
 ::-webkit-scrollbar-track { background: var(--warm-grey); }
@@ -66,7 +56,6 @@ section { scroll-margin-top: 72px; }
 /* ============================================================
    COMPONENTS
    ============================================================ */
-
 .rule { display: block; width: 40px; height: 2px; background: var(--gold); margin-bottom: 16px; }
 .rule-center { margin: 0 auto 16px; }
 
@@ -91,26 +80,21 @@ section { scroll-margin-top: 72px; }
 }
 
 .btn {
-  display: inline-flex; align-items: center; gap: 10px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   font-family: var(--font-sans); font-size: 0.8rem;
   font-weight: 600; letter-spacing: 0.08em;
   text-transform: uppercase; padding: 14px 28px;
   transition: var(--transition); cursor: pointer;
   border: none; position: relative; overflow: hidden;
 }
-
 .btn-primary { background: var(--navy); color: var(--white); }
 .btn-primary:hover { background: var(--navy-mid); }
-
 .btn-gold { background: var(--gold); color: var(--white); }
 .btn-gold:hover { background: var(--gold-light); }
-
 .btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.5); }
 .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
-
 .btn-outline-dark { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
 .btn-outline-dark:hover { background: var(--navy); color: var(--white); }
-
 .btn-green { background: #1A7A50; color: var(--white); }
 .btn-green:hover { background: #155E3D; }
 
@@ -120,11 +104,10 @@ section { scroll-margin-top: 72px; }
 .section-header { margin-bottom: 56px; }
 .section-header.centered { text-align: center; }
 .section-header.centered .rule { margin: 0 auto 16px; }
-
 .divider { border: none; border-top: 1px solid var(--rule); margin: 0; }
 
 /* ============================================================
-   NAVBAR
+   NAVBAR — with logo support
    ============================================================ */
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
@@ -141,7 +124,22 @@ section { scroll-margin-top: 72px; }
   max-width: var(--max); margin: 0 auto; width: 100%;
   display: flex; align-items: center; justify-content: space-between;
 }
-.nav-brand { display: flex; flex-direction: column; line-height: 1.2; }
+
+/* Brand with logo */
+.nav-brand {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none; flex-shrink: 0;
+}
+.nav-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+.nav-brand-text {
+  display: flex; flex-direction: column; line-height: 1.2;
+}
 .nav-brand-name {
   font-family: var(--font-serif);
   font-size: 1.15rem; font-weight: 600;
@@ -152,6 +150,7 @@ section { scroll-margin-top: 72px; }
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--text-light);
 }
+
 .nav-links { display: flex; align-items: center; gap: 2px; }
 .nav-links a {
   font-size: 0.78rem; font-weight: 500;
@@ -178,9 +177,11 @@ section { scroll-margin-top: 72px; }
 .nav-admission::after { display: none !important; }
 .nav-admission:hover { background: var(--gold-light) !important; }
 
+/* Hamburger */
 .hamburger {
   display: none; flex-direction: column; gap: 5px;
   cursor: pointer; padding: 4px; border: none; background: none;
+  z-index: 1001;
 }
 .hamburger span {
   display: block; height: 1.5px; width: 24px;
@@ -190,30 +191,50 @@ section { scroll-margin-top: 72px; }
 .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
+/* Mobile nav — full-width with smooth animation */
 .mobile-nav {
-  display: none; position: fixed;
+  display: none;
+  position: fixed;
   top: 72px; left: 0; right: 0; z-index: 999;
-  background: var(--ivory); border-bottom: 1px solid var(--rule);
-  padding: 20px 32px 28px;
-  flex-direction: column; gap: 4px;
+  background: var(--ivory);
+  border-bottom: 1px solid var(--rule);
+  padding: 0 0 0 0;
+  flex-direction: column;
   box-shadow: 0 20px 40px rgba(15,31,61,0.08);
+  /* Smooth slide animation */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.35s ease,
+              padding 0.3s ease;
 }
-.mobile-nav.open { display: flex; }
+.mobile-nav.open {
+  display: flex;
+  max-height: 500px;
+  opacity: 1;
+  padding: 8px 0 16px 0;
+}
 .mobile-nav a {
-  font-size: 0.88rem; font-weight: 500;
-  color: var(--text-mid); padding: 12px 0;
+  font-size: 0.92rem; font-weight: 500;
+  color: var(--text-mid);
+  padding: 14px 24px;
   border-bottom: 1px solid var(--rule);
   transition: var(--transition-fast);
+  display: block;
 }
-.mobile-nav a:last-child { border-bottom: none; }
-.mobile-nav a:hover { color: var(--navy); padding-left: 6px; }
+.mobile-nav a:last-of-type { border-bottom: none; }
+.mobile-nav a:hover { color: var(--navy); background: var(--warm-grey); }
 .mobile-nav .mob-cta {
-  margin-top: 12px; background: var(--navy); color: var(--white) !important;
-  text-align: center; padding: 13px 0 !important;
-  font-size: 0.72rem !important; font-weight: 600 !important;
+  margin: 12px 20px 4px;
+  background: var(--navy); color: var(--white) !important;
+  text-align: center; padding: 14px 0 !important;
+  font-size: 0.78rem !important; font-weight: 600 !important;
   letter-spacing: 0.10em; text-transform: uppercase;
-  border-bottom: none !important;
+  border: none !important;
+  border-radius: 0;
 }
+.mobile-nav .mob-cta:hover { background: var(--navy-mid) !important; }
 
 /* ============================================================
    HERO
@@ -224,7 +245,6 @@ section { scroll-margin-top: 72px; }
   padding: 120px 32px 80px;
   overflow: hidden;
 }
-/* REPLACE: hero-bg background-image with your actual school/campus photo */
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
   background-image: url('2026-01-23\ \(5\).webp');
@@ -387,7 +407,7 @@ section { scroll-margin-top: 72px; }
 .about-list-content p { font-size: 0.86rem; line-height: 1.65; color: var(--text-light); }
 
 /* ============================================================
-   PROGRAMS
+   PROGRAMS — with card images
    ============================================================ */
 .programs-section { background: var(--warm-grey); }
 .programs-grid {
@@ -396,21 +416,49 @@ section { scroll-margin-top: 72px; }
   border: 1px solid var(--rule);
 }
 .program-card {
-  background: var(--ivory); padding: 36px 32px;
+  background: var(--ivory); padding: 0;
   transition: var(--transition); position: relative;
   overflow: hidden;
+  display: flex; flex-direction: column;
 }
 .program-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0;
-  height: 2px; background: var(--gold);
+  height: 2px; background: var(--gold); z-index: 2;
   transform: scaleX(0); transform-origin: left;
   transition: transform 0.4s ease;
 }
 .program-card:hover { background: var(--white); }
 .program-card:hover::before { transform: scaleX(1); }
+
+/* Program card image */
+.program-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 0;
+  transition: transform 0.6s ease;
+  flex-shrink: 0;
+}
+.program-card:hover .program-card-img {
+  transform: scale(1.04);
+}
+.program-card-img-wrap {
+  overflow: hidden;
+  width: 100%;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+/* Card body */
+.program-card-body {
+  padding: 28px 28px 24px;
+  display: flex; flex-direction: column; flex: 1;
+}
 .program-number {
   font-family: var(--font-serif); font-size: 3rem; font-weight: 400;
-  color: var(--mid-grey); line-height: 1; margin-bottom: 20px;
+  color: var(--mid-grey); line-height: 1; margin-bottom: 16px;
   transition: var(--transition);
 }
 .program-card:hover .program-number { color: var(--gold-pale); }
@@ -520,7 +568,6 @@ section { scroll-margin-top: 72px; }
   filter: saturate(0.85);
 }
 .gallery-cell:hover img { transform: scale(1.05); filter: saturate(1); }
-/* REPLACE: all gallery images with actual school photos */
 .gc-1 { grid-column: span 5; }
 .gc-2 { grid-column: span 3; }
 .gc-3 { grid-column: span 4; }
@@ -546,7 +593,6 @@ section { scroll-margin-top: 72px; }
   position: relative; overflow: hidden;
   padding: 96px 32px;
 }
-/* REPLACE: admissions-bg background-image with school photo */
 .admissions-bg {
   position: absolute; inset: 0;
   background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1400&q=80');
@@ -743,7 +789,7 @@ section { scroll-margin-top: 72px; }
 }
 
 /* ============================================================
-   RESPONSIVE
+   RESPONSIVE — TABLET (max 1024px)
    ============================================================ */
 @media (max-width: 1024px) {
   .hero-content { grid-template-columns: 1fr; }
@@ -763,39 +809,160 @@ section { scroll-margin-top: 72px; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
 }
+
+/* ============================================================
+   RESPONSIVE — MOBILE (max 640px) — FULLY OPTIMISED
+   ============================================================ */
 @media (max-width: 640px) {
-  .section { padding: 64px 20px; }
-  .section-sm { padding: 48px 20px; }
-  .navbar { padding: 0 20px; }
-  .hero { padding: 100px 20px 72px; }
-  .hero-heading { font-size: 2.6rem; }
-  .hero-btns { flex-direction: column; gap: 10px; }
+  /* Global spacing */
+  .section { padding: 56px 20px; }
+  .section-sm { padding: 40px 20px; }
+  .container { padding: 0; }
+
+  /* Navbar */
+  .navbar { padding: 0 20px; height: 64px; }
+  .nav-logo { height: 36px; }
+  .nav-brand-name { font-size: 1rem; }
+  .nav-brand-sub { display: none; }
+  .nav-brand { gap: 10px; }
+  section { scroll-margin-top: 64px; }
+
+  /* Mobile nav full-width */
+  .mobile-nav { top: 64px; }
+  .mobile-nav a { padding: 16px 20px; font-size: 0.96rem; }
+
+  /* Hero — center aligned */
+  .hero {
+    padding: 96px 20px 72px;
+    align-items: center;
+  }
+  .hero-bg::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(10,20,45,0.85) 0%,
+      rgba(15,31,61,0.80) 60%,
+      rgba(15,31,61,0.75) 100%
+    );
+  }
+  .hero-content { gap: 0; }
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .hero-eyebrow {
+    justify-content: center;
+    font-size: 0.68rem;
+  }
+  .hero-eyebrow::before { display: none; }
+  .hero-heading {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .hero-divider { margin: 0 auto 20px; }
+  .hero-tagline { font-size: 1rem; text-align: center; }
+  .hero-desc {
+    font-size: 0.88rem; text-align: center;
+    max-width: 100%; margin-bottom: 28px;
+  }
+  .hero-btns {
+    flex-direction: column; gap: 12px;
+    width: 100%;
+  }
+  .hero-btns .btn {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 0.82rem;
+    justify-content: center;
+  }
+
+  /* Stats */
   .stats-inner { grid-template-columns: 1fr 1fr; }
-  .stat-item { padding: 28px 20px; }
+  .stat-item { padding: 24px 16px; }
+  .stat-number { font-size: 2.2rem; }
+  .stat-label { font-size: 0.68rem; }
+
+  /* About */
+  .about-img-accent { bottom: -12px; right: -8px; padding: 20px 24px; }
+  .about-accent-number { font-size: 2rem; }
+
+  /* Programs — 1 card per row */
   .programs-grid { grid-template-columns: 1fr; }
-  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 180px); }
+  .program-card-img { height: 220px; }
+  .program-card-img-wrap { height: 220px; }
+  .program-card-body { padding: 24px 20px 20px; }
+
+  /* Facilities */
+  .facilities-img { aspect-ratio: 4/3; }
+
+  /* Why section */
+  .why-grid { grid-template-columns: 1fr; }
+  .why-item {
+    padding: 28px 24px;
+    border-right: none !important;
+  }
+  .why-item:last-child { border-bottom: none; }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 180px);
+  }
   .gc-1 { grid-column: span 2; }
   .gc-2, .gc-3, .gc-4, .gc-5, .gc-6 { grid-column: span 1; }
-  .why-grid { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
+
+  /* Admissions */
+  .admissions-section { padding: 64px 20px; }
+  .admissions-cta { flex-direction: column; width: 100%; }
+  .admissions-cta .btn { width: 100%; justify-content: center; }
+
+  /* Contact */
+  .contact-row { grid-template-columns: 48px 1fr; gap: 14px; }
+  .contact-action-row { flex-direction: column; }
+  .contact-action-row .btn { width: 100%; justify-content: center; }
+  .map-frame { height: 280px; }
+
+  /* Enquiry form */
   .enquiry-form-inner { padding: 28px 20px; }
-  .footer-top { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .enquiry-highlight { padding: 28px 20px; }
+  .enquiry-highlight .btn { width: 100%; }
+
+  /* Footer */
+  .footer { padding: 48px 20px 28px; }
+  .footer-top { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; text-align: center; }
-  .mobile-nav { padding: 20px; }
-  .admissions-cta { flex-direction: column; }
+
+  /* Global buttons on mobile — bigger tap area */
+  .btn { min-height: 48px; padding: 14px 24px; }
+  .btn-sm { min-height: 44px; padding: 12px 18px !important; }
+
+  /* All images full-width */
+  .about-img, .facilities-img {
+    width: 100%; height: auto;
+  }
 }
 </style>
 </head>
 <body>
 
 <!-- ====================================================
-     NAVBAR
+     NAVBAR — with logo
      ==================================================== -->
 <nav class="navbar" id="navbar">
   <div class="navbar-inner">
     <a href="#home" class="nav-brand" aria-label="Shanthi Juniors Play School">
-      <span class="nav-brand-name">Shanthi Juniors</span>
-      <span class="nav-brand-sub">Play School &nbsp;&bull;&nbsp; Cuddalore</span>
+      <!-- School Logo — replace src with your actual logo file -->
+      <img
+        src="logo.png"
+        alt="Shanthi Juniors Logo"
+        class="nav-logo"
+        onerror="this.style.display='none'"
+      />
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">Shanthi Juniors</span>
+        <span class="nav-brand-sub">Play School &nbsp;&bull;&nbsp; Cuddalore</span>
+      </div>
     </a>
     <div class="nav-links">
       <a href="#about">About</a>
@@ -805,12 +972,12 @@ section { scroll-margin-top: 72px; }
       <a href="#contact">Contact</a>
       <a href="#admissions" class="nav-admission">Admissions Open</a>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
-<div class="mobile-nav" id="mobileNav">
+<div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
   <a href="#about" onclick="closeNav()">About</a>
   <a href="#programs" onclick="closeNav()">Programmes</a>
   <a href="#facilities" onclick="closeNav()">Facilities</a>
@@ -823,7 +990,6 @@ section { scroll-margin-top: 72px; }
      HERO
      ==================================================== -->
 <section class="hero" id="home">
-  <!-- REPLACE: Update .hero-bg background-image in CSS with actual school campus photograph -->
   <div class="hero-bg"></div>
   <div class="hero-content">
     <div class="hero-text">
@@ -887,7 +1053,6 @@ section { scroll-margin-top: 72px; }
   <div class="container">
     <div class="about-grid">
       <div class="about-img-col reveal-l">
-        <!-- REPLACE: with actual school / classroom image -->
         <img
           class="about-img"
           src="papa.png"
@@ -953,7 +1118,7 @@ section { scroll-margin-top: 72px; }
 <hr class="divider">
 
 <!-- ====================================================
-     PROGRAMS
+     PROGRAMS — with images
      ==================================================== -->
 <section class="section programs-section" id="programs">
   <div class="container">
@@ -963,66 +1128,139 @@ section { scroll-margin-top: 72px; }
       <h2 class="display-title">Structured Pathways for <em>Every Stage</em></h2>
     </div>
     <div class="programs-grid reveal">
+
+      <!-- 01 — Daycare -->
       <div class="program-card">
-        <div class="program-number">01</div>
-        <div class="program-name">Daycare</div>
-        <span class="program-age">6 Months — 2 Years</span>
-        <p class="program-desc">A warm, professionally supervised care environment for infants and toddlers, ensuring safety, stimulation, and emotional security throughout the day.</p>
-        <span class="program-link">
-          Learn More
-          <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
-        </span>
+        <div class="program-card-img-wrap">
+          <img
+            class="program-card-img"
+            src="thala.png"
+            alt="Daycare — toddlers with teacher"
+            loading="lazy"
+          />
+        </div>
+        <div class="program-card-body">
+          <div class="program-number">01</div>
+          <div class="program-name">Daycare</div>
+          <span class="program-age">6 Months — 2 Years</span>
+          <p class="program-desc">A warm, professionally supervised care environment for infants and toddlers, ensuring safety, stimulation, and emotional security throughout the day.</p>
+          <span class="program-link">
+            Learn More
+            <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+          </span>
+        </div>
       </div>
+
+      <!-- 02 — Playgroup -->
       <div class="program-card">
-        <div class="program-number">02</div>
-        <div class="program-name">Playgroup</div>
-        <span class="program-age">1.5 — 2.5 Years</span>
-        <p class="program-desc">Structured play-based introduction to learning, developing motor skills, language, and social interaction through guided discovery and exploration.</p>
-        <span class="program-link">
-          Learn More
-          <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
-        </span>
+        <div class="program-card-img-wrap">
+          <img
+            class="program-card-img"
+            src="blast.jpg"
+            alt="Playgroup — kids in activity"
+            loading="lazy"
+          />
+        </div>
+        <div class="program-card-body">
+          <div class="program-number">02</div>
+          <div class="program-name">Playgroup</div>
+          <span class="program-age">1.5 — 2.5 Years</span>
+          <p class="program-desc">Structured play-based introduction to learning, developing motor skills, language, and social interaction through guided discovery and exploration.</p>
+          <span class="program-link">
+            Learn More
+            <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+          </span>
+        </div>
       </div>
+
+      <!-- 03 — Nursery -->
       <div class="program-card">
-        <div class="program-number">03</div>
-        <div class="program-name">Nursery</div>
-        <span class="program-age">2.5 — 3.5 Years</span>
-        <p class="program-desc">Building early literacy and numeracy foundations through a carefully designed curriculum that balances structured learning with creative expression.</p>
-        <span class="program-link">
-          Learn More
-          <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
-        </span>
+        <div class="program-card-img-wrap">
+          <img
+            class="program-card-img"
+            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80"
+            alt="Nursery — kids learning alphabets"
+            loading="lazy"
+          />
+        </div>
+        <div class="program-card-body">
+          <div class="program-number">03</div>
+          <div class="program-name">Nursery</div>
+          <span class="program-age">2.5 — 3.5 Years</span>
+          <p class="program-desc">Building early literacy and numeracy foundations through a carefully designed curriculum that balances structured learning with creative expression.</p>
+          <span class="program-link">
+            Learn More
+            <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+          </span>
+        </div>
       </div>
+
+      <!-- 04 — Pre-KG -->
       <div class="program-card">
-        <div class="program-number">04</div>
-        <div class="program-name">Pre-KG</div>
-        <span class="program-age">3 — 4 Years</span>
-        <p class="program-desc">Strengthening school readiness through language development, logical reasoning, and structured classroom routines that build confidence and discipline.</p>
-        <span class="program-link">
-          Learn More
-          <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
-        </span>
+        <div class="program-card-img-wrap">
+          <img
+            class="program-card-img"
+            src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=600&q=80"
+            alt="Pre-KG — structured classroom"
+            loading="lazy"
+          />
+        </div>
+        <div class="program-card-body">
+          <div class="program-number">04</div>
+          <div class="program-name">Pre-KG</div>
+          <span class="program-age">3 — 4 Years</span>
+          <p class="program-desc">Strengthening school readiness through language development, logical reasoning, and structured classroom routines that build confidence and discipline.</p>
+          <span class="program-link">
+            Learn More
+            <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+          </span>
+        </div>
       </div>
+
+      <!-- 05 — Junior KG -->
       <div class="program-card">
-        <div class="program-number">05</div>
-        <div class="program-name">Junior KG</div>
-        <span class="program-age">4 — 5 Years</span>
-        <p class="program-desc">Advancing reading readiness, early mathematical concepts, and critical thinking skills through an engaging, concept-driven academic curriculum.</p>
-        <span class="program-link">
-          Learn More
-          <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
-        </span>
+        <div class="program-card-img-wrap">
+          <img
+            class="program-card-img"
+            src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=600&q=80"
+            alt="Junior KG — reading and learning"
+            loading="lazy"
+          />
+        </div>
+        <div class="program-card-body">
+          <div class="program-number">05</div>
+          <div class="program-name">Junior KG</div>
+          <span class="program-age">4 — 5 Years</span>
+          <p class="program-desc">Advancing reading readiness, early mathematical concepts, and critical thinking skills through an engaging, concept-driven academic curriculum.</p>
+          <span class="program-link">
+            Learn More
+            <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+          </span>
+        </div>
       </div>
+
+      <!-- 06 — Senior KG -->
       <div class="program-card">
-        <div class="program-number">06</div>
-        <div class="program-name">Senior KG</div>
-        <span class="program-age">5 — 6 Years</span>
-        <p class="program-desc">Comprehensive preparation for primary school covering reading, writing, arithmetic, and collaborative skills to ensure a confident transition to Class I.</p>
-        <span class="program-link">
-          Learn More
-          <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
-        </span>
+        <div class="program-card-img-wrap">
+          <img
+            class="program-card-img"
+            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80"
+            alt="Senior KG — writing and school readiness"
+            loading="lazy"
+          />
+        </div>
+        <div class="program-card-body">
+          <div class="program-number">06</div>
+          <div class="program-name">Senior KG</div>
+          <span class="program-age">5 — 6 Years</span>
+          <p class="program-desc">Comprehensive preparation for primary school covering reading, writing, arithmetic, and collaborative skills to ensure a confident transition to Class I.</p>
+          <span class="program-link">
+            Learn More
+            <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+          </span>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -1034,7 +1272,6 @@ section { scroll-margin-top: 72px; }
   <div class="container">
     <div class="facilities-grid">
       <div class="facilities-img-col reveal-l">
-        <!-- REPLACE: with actual campus / classroom photo -->
         <img
           class="facilities-img"
           src="faaa.png"
@@ -1154,7 +1391,6 @@ section { scroll-margin-top: 72px; }
       <span class="rule"></span>
       <h2 class="display-title">Life at <em>Shanthi Juniors</em></h2>
     </div>
-    <!-- REPLACE: All gallery images below with actual school photographs -->
     <div class="gallery-grid reveal">
       <div class="gallery-cell gc-1">
         <img src="unnamed (12).webp" alt="Students studying" loading="lazy"/>
@@ -1188,7 +1424,6 @@ section { scroll-margin-top: 72px; }
      ADMISSIONS
      ==================================================== -->
 <div class="admissions-section" id="admissions">
-  <!-- REPLACE: Update .admissions-bg background-image in CSS with school photo -->
   <div class="admissions-bg"></div>
   <div class="admissions-inner">
     <div class="admissions-text reveal-l">
@@ -1252,9 +1487,8 @@ section { scroll-margin-top: 72px; }
       </div>
       <div class="reveal-r">
         <div class="map-frame">
-          <!-- REPLACE: Paste your Google Maps embed iframe src here -->
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.1234!2d79.7715!3d11.7480!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sManjakuppam%2C+Cuddalore%2C+Tamil+Nadu+607001!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+            src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6334.452135784071!2d79.76224089036212!3d11.759733655675005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5498f2a78adc1b%3A0xe0bf8fce60f21b0e!2sShanthi%20Juniors%20Play%20School!5e0!3m2!1sen!2sin!4v1776824721891!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
             allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             title="Shanthi Juniors Play School — Cuddalore">
@@ -1395,7 +1629,7 @@ section { scroll-margin-top: 72px; }
 </footer>
 
 <!-- ====================================================
-     WHATSAPP FLOAT — subtle, premium
+     WHATSAPP FLOAT
      ==================================================== -->
 <a
   href="https://wa.me/919486187606?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20admissions%20at%20Shanthi%20Juniors%20Play%20School."
@@ -1417,19 +1651,45 @@ section { scroll-margin-top: 72px; }
     navbar.classList.toggle('scrolled', window.scrollY > 30);
   }, { passive: true });
 
-  // — Mobile nav —
+  // — Mobile nav toggle with smooth animation —
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
+  let navOpen = false;
+
   hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileNav.classList.toggle('open');
+    navOpen = !navOpen;
+    hamburger.classList.toggle('open', navOpen);
+    hamburger.setAttribute('aria-expanded', navOpen);
+    if (navOpen) {
+      mobileNav.style.display = 'flex';
+      // Force reflow then add open class for animation
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          mobileNav.classList.add('open');
+        });
+      });
+    } else {
+      mobileNav.classList.remove('open');
+      // Wait for animation then hide
+      setTimeout(() => {
+        if (!navOpen) mobileNav.style.display = 'none';
+      }, 400);
+    }
   });
+
   function closeNav() {
+    navOpen = false;
     hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', false);
     mobileNav.classList.remove('open');
+    setTimeout(() => { mobileNav.style.display = 'none'; }, 400);
   }
+
+  // Close nav on outside click
   document.addEventListener('click', e => {
-    if (!navbar.contains(e.target) && !mobileNav.contains(e.target)) closeNav();
+    if (navOpen && !navbar.contains(e.target) && !mobileNav.contains(e.target)) {
+      closeNav();
+    }
   });
 
   // — Smooth scroll —
