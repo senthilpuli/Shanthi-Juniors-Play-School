@@ -257,7 +257,7 @@ section { scroll-margin-top: 72px; }
 }
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
-  background-image: url('2026-01-23\ \(5\).webp');
+  background-image: url('school\ bg\ da.png');
   background-size: cover; background-position: center 30%;
 }
 .hero-bg::after {
@@ -306,8 +306,19 @@ section { scroll-margin-top: 72px; }
 }
 .hero-desc {
   font-size: 0.92rem; line-height: 1.75; color: rgba(255,255,255,0.65);
-  margin-bottom: 36px; max-width: 480px;
+  margin-bottom: 20px; max-width: 480px;
   animation: fadeUp 0.8s 0.36s both;
+}
+/* ✅ CHANGE 3: School timing line in hero */
+.hero-timing {
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.10em;
+  text-transform: uppercase; color: var(--gold-light);
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s 0.40s both;
+}
+.hero-timing::before {
+  content: ''; display: block; width: 20px; height: 1px; background: var(--gold-light);
 }
 .hero-btns {
   display: flex; flex-wrap: wrap; gap: 12px;
@@ -871,6 +882,7 @@ section { scroll-margin-top: 72px; }
   }
   .hero-divider { margin: 0 auto 20px; }
   .hero-tagline { font-size: 1rem; text-align: center; }
+  .hero-timing { justify-content: center; font-size: 0.7rem; }
   .hero-desc {
     font-size: 0.88rem; text-align: center;
     max-width: 100%; margin-bottom: 28px;
@@ -1008,6 +1020,8 @@ section { scroll-margin-top: 72px; }
       <div class="hero-divider"></div>
       <p class="hero-tagline">Where Learning Begins with Excellence</p>
       <p class="hero-desc">A premier early childhood institution dedicated to nurturing young minds through a structured, caring, and academically enriching environment.</p>
+      <!-- ✅ CHANGE 3: School Timing added naturally below description -->
+      <div class="hero-timing">School Timings: 8:30 AM – 4:30 PM</div>
       <div class="hero-btns">
         <a href="#enquiry" class="btn btn-gold">Enquire Now</a>
         <a href="tel:9486187606" class="btn btn-outline">Call Now</a>
@@ -1021,7 +1035,7 @@ section { scroll-margin-top: 72px; }
       </div>
       <div class="hero-info-card">
         <div class="hero-info-label">Students Enrolled</div>
-        <div class="hero-info-value">500+</div>
+        <div class="hero-info-value">100+</div>
         <div class="hero-info-sub">Happy Learners</div>
       </div>
     </div>
@@ -1038,7 +1052,7 @@ section { scroll-margin-top: 72px; }
 <div class="stats-band">
   <div class="stats-inner">
     <div class="stat-item">
-      <div class="stat-number">500+</div>
+      <div class="stat-number">100+</div>
       <div class="stat-label">Students Enrolled</div>
     </div>
     <div class="stat-item">
@@ -1152,7 +1166,8 @@ section { scroll-margin-top: 72px; }
         <div class="program-card-body">
           <div class="program-number">01</div>
           <div class="program-name">Daycare</div>
-          <span class="program-age">6 Months — 2 Years</span>
+          <!-- ✅ CHANGE 1: Updated age range -->
+          <span class="program-age">2 Years</span>
           <p class="program-desc">A warm, professionally supervised care environment for infants and toddlers, ensuring safety, stimulation, and emotional security throughout the day.</p>
           <span class="program-link">
             Learn More
@@ -1174,7 +1189,8 @@ section { scroll-margin-top: 72px; }
         <div class="program-card-body">
           <div class="program-number">02</div>
           <div class="program-name">Playgroup</div>
-          <span class="program-age">1.5 — 2.5 Years</span>
+          <!-- ✅ CHANGE 1: Updated age range -->
+          <span class="program-age">2 – 3 Years</span>
           <p class="program-desc">Structured play-based introduction to learning, developing motor skills, language, and social interaction through guided discovery and exploration.</p>
           <span class="program-link">
             Learn More
@@ -1196,7 +1212,8 @@ section { scroll-margin-top: 72px; }
         <div class="program-card-body">
           <div class="program-number">03</div>
           <div class="program-name">Nursery</div>
-          <span class="program-age">2.5 — 3.5 Years</span>
+          <!-- ✅ CHANGE 1: Nursery age kept as-is per instruction -->
+          <span class="program-age">2.5 – 3.5 Years</span>
           <p class="program-desc">Building early literacy and numeracy foundations through a carefully designed curriculum that balances structured learning with creative expression.</p>
           <span class="program-link">
             Learn More
@@ -1218,7 +1235,8 @@ section { scroll-margin-top: 72px; }
         <div class="program-card-body">
           <div class="program-number">04</div>
           <div class="program-name">Pre-KG</div>
-          <span class="program-age">3 — 4 Years</span>
+          <!-- ✅ CHANGE 1: Age kept same, already correct -->
+          <span class="program-age">3 – 4 Years</span>
           <p class="program-desc">Strengthening school readiness through language development, logical reasoning, and structured classroom routines that build confidence and discipline.</p>
           <span class="program-link">
             Learn More
@@ -1240,7 +1258,8 @@ section { scroll-margin-top: 72px; }
         <div class="program-card-body">
           <div class="program-number">05</div>
           <div class="program-name">Junior KG</div>
-          <span class="program-age">4 — 5 Years</span>
+          <!-- ✅ CHANGE 1: Age kept same, already correct -->
+          <span class="program-age">4 – 5 Years</span>
           <p class="program-desc">Advancing reading readiness, early mathematical concepts, and critical thinking skills through an engaging, concept-driven academic curriculum.</p>
           <span class="program-link">
             Learn More
@@ -1262,7 +1281,8 @@ section { scroll-margin-top: 72px; }
         <div class="program-card-body">
           <div class="program-number">06</div>
           <div class="program-name">Senior KG</div>
-          <span class="program-age">5 — 6 Years</span>
+          <!-- ✅ CHANGE 1: Age kept same, already correct -->
+          <span class="program-age">5 – 6 Years</span>
           <p class="program-desc">Comprehensive preparation for primary school covering reading, writing, arithmetic, and collaborative skills to ensure a confident transition to Class I.</p>
           <span class="program-link">
             Learn More
@@ -1312,7 +1332,7 @@ section { scroll-margin-top: 72px; }
             </div>
             <div class="facility-text">
               <h4>Modern Learning Infrastructure</h4>
-              <p>Smart boards, audio-visual classrooms, and age-appropriate learning materials aligned with current pedagogical standards.</p>
+              <p>Smart boards, audio-visual classrooms, and age-appropriate learning materials aligned with our Montessori and CBSE Curriculum standards.</p>
             </div>
           </div>
           <div class="facility-item">
@@ -1364,14 +1384,16 @@ section { scroll-margin-top: 72px; }
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
         <div class="why-title">Expert Curriculum Design</div>
-        <p class="why-desc">Our curriculum is developed in alignment with NCERT guidelines and international early childhood frameworks, ensuring academic rigour from the very beginning.</p>
+        <!-- ✅ CHANGE 2: Replaced NCERT with Montessori and CBSE Curriculum -->
+        <p class="why-desc">Our curriculum is developed in alignment with the Montessori and CBSE Curriculum, ensuring academic rigour and holistic child development from the very beginning.</p>
       </div>
       <div class="why-item reveal" style="transition-delay:0.1s">
         <div class="why-icon">
           <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         </div>
         <div class="why-title">Research-Backed Pedagogy</div>
-        <p class="why-desc">Teaching methods grounded in child development research, balancing structured instruction with exploration to cultivate independent thinking and curiosity.</p>
+        <!-- ✅ CHANGE 2: Pedagogy description updated to reflect Montessori and CBSE -->
+        <p class="why-desc">Teaching methods rooted in the Montessori and CBSE Curriculum framework, balancing structured instruction with hands-on exploration to cultivate independent thinking and curiosity.</p>
       </div>
       <div class="why-item reveal" style="transition-delay:0.05s">
         <div class="why-icon">
@@ -1481,8 +1503,9 @@ section { scroll-margin-top: 72px; }
             <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div>
+            <!-- ✅ CHANGE 4: Updated address with corrected formatting -->
             <span class="contact-label">Address</span>
-            <p class="contact-value">20, Bashyam Reddy Street I,<br>Manjakuppam, Cuddalore — 607001<br>Tamil Nadu, India</p>
+            <p class="contact-value">20, Bashyam Reddy Street<br>Manjakuppam<br>Cuddalore — 607 001<br>Tamil Nadu, India</p>
           </div>
         </div>
         <div class="contact-row">
@@ -1490,8 +1513,9 @@ section { scroll-margin-top: 72px; }
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <div>
+            <!-- ✅ CHANGE 3: School timing also updated in contact section -->
             <span class="contact-label">School Hours</span>
-            <p class="contact-value">Monday — Saturday<br>8:00 AM to 5:00 PM<br><span style="font-size:0.82rem;color:var(--text-light);">Sunday: Closed</span></p>
+            <p class="contact-value">Monday — Saturday<br>8:30 AM to 4:30 PM<br><span style="font-size:0.82rem;color:var(--text-light);">Sunday: Closed</span></p>
           </div>
         </div>
       </div>
@@ -1504,7 +1528,8 @@ section { scroll-margin-top: 72px; }
             title="Shanthi Juniors Play School — Cuddalore">
           </iframe>
         </div>
-        <p class="map-caption">20, Bashyam Reddy Street I, Manjakuppam, Cuddalore — 607001</p>
+        <!-- ✅ CHANGE 4: Address caption updated -->
+        <p class="map-caption">20, Bashyam Reddy Street, Manjakuppam, Cuddalore — 607 001</p>
       </div>
     </div>
   </div>
@@ -1551,8 +1576,8 @@ section { scroll-margin-top: 72px; }
               <label class="form-label" for="childAge">Programme Interest *</label>
               <select id="childAge" class="form-field" required>
                 <option value="" disabled selected>Select child's age group</option>
-                <option>Daycare (6 months – 2 years)</option>
-                <option>Playgroup (1.5 – 2.5 years)</option>
+                <option>Daycare (2 years)</option>
+                <option>Playgroup (2 – 3 years)</option>
                 <option>Nursery (2.5 – 3.5 years)</option>
                 <option>Pre-KG (3 – 4 years)</option>
                 <option>Junior KG (4 – 5 years)</option>
@@ -1613,7 +1638,8 @@ section { scroll-margin-top: 72px; }
         <div class="footer-contact-icon">
           <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
-        <span class="footer-contact-text">20, Bashyam Reddy Street I,<br>Manjakuppam, Cuddalore — 607001</span>
+        <!-- ✅ CHANGE 4: Footer address updated -->
+        <span class="footer-contact-text">20, Bashyam Reddy Street,<br>Manjakuppam, Cuddalore — 607 001</span>
       </div>
       <div class="footer-contact-row">
         <div class="footer-contact-icon">
@@ -1628,7 +1654,8 @@ section { scroll-margin-top: 72px; }
         <div class="footer-contact-icon">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-        <span class="footer-contact-text">Mon – Sat: 8:00 AM – 5:00 PM</span>
+        <!-- ✅ CHANGE 3: Updated timing in footer too -->
+        <span class="footer-contact-text">Mon – Sat: 8:30 AM – 4:30 PM</span>
       </div>
     </div>
   </div>
