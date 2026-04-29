@@ -1,0 +1,72 @@
+# ==============================================================
+# robots.txt — Shanthi Juniors Play School, Cuddalore
+# Domain : https://www.shanthijuniorsplayschool.in
+# Updated: 2026-04-29
+#
+# Instructions:
+#   Place this file at the ROOT of your domain so it is
+#   accessible at: https://www.shanthijuniorsplayschool.in/robots.txt
+#   Replace the domain below with your actual live domain.
+# ==============================================================
+
+
+# ── Allow all search engine crawlers (Google, Bing, etc.) ──
+User-agent: *
+Allow: /
+
+# ── Block crawling of any admin, config, or private paths ──
+# (Add paths below if your hosting has admin panels or CMS)
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
+Disallow: /*.php$
+Disallow: /tmp/
+Disallow: /private/
+
+# ── Allow Google to crawl all CSS, JS, and images ──
+# (Required for Google to render and rank the page correctly)
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.gif$
+Allow: /*.ico$
+Allow: /*.woff2$
+
+
+# ── Google Search Bot (explicit allow) ──
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 2
+
+# ── Google Image Bot (important for gallery SEO) ──
+User-agent: Googlebot-Image
+Allow: /
+
+# ── Bing Bot ──
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 3
+
+# ── Block AI training scrapers (optional but recommended) ──
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+
+# ── Sitemap location (REQUIRED for Google to find it) ──
+Sitemap: https://www.shanthijuniorsplayschool.in/sitemap.xml
