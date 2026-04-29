@@ -1,34 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
     http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!--
-    ============================================================
-    SITEMAP — Shanthi Juniors Play School, Cuddalore
-    Domain  : https://shanthijuniorsplayschool.in
-    Updated : 2026-04-29
-    ============================================================
-    Instructions:
-    1. Replace all instances of https://shanthijuniorsplayschool.in
-       with your actual live domain before uploading.
-    2. Submit this file at:
-       https://search.google.com/search-console
-    ============================================================
-  -->
-
-  <!-- ── HOMEPAGE (highest priority) ── -->
   <url>
-    <loc>https://www.shanthijuniorsplayschool.in/</loc>
+    <loc>https://shanthijuniorsplayschool.in/</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- ── ABOUT SECTION ── -->
   <url>
     <loc>https://shanthijuniorsplayschool.in/#about</loc>
     <lastmod>2026-04-29</lastmod>
@@ -36,7 +19,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- ── PROGRAMMES (high conversion pages) ── -->
   <url>
     <loc>https://shanthijuniorsplayschool.in/#programs</loc>
     <lastmod>2026-04-29</lastmod>
@@ -44,15 +26,6 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Daycare -->
-  <url>
-    <loc>https://shanthijuniorsplayschool.in/#programs</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ── FACILITIES ── -->
   <url>
     <loc>https://shanthijuniorsplayschool.in/#facilities</loc>
     <lastmod>2026-04-29</lastmod>
@@ -60,7 +33,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- ── FAQ (rich snippet page) ── -->
   <url>
     <loc>https://shanthijuniorsplayschool.in/#faq</loc>
     <lastmod>2026-04-29</lastmod>
@@ -68,7 +40,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- ── GALLERY ── -->
   <url>
     <loc>https://shanthijuniorsplayschool.in/#gallery</loc>
     <lastmod>2026-04-29</lastmod>
@@ -76,7 +47,6 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- ── ADMISSIONS (high conversion) ── -->
   <url>
     <loc>https://shanthijuniorsplayschool.in/#admissions</loc>
     <lastmod>2026-04-29</lastmod>
@@ -84,7 +54,6 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- ── ENQUIRY FORM ── -->
   <url>
     <loc>https://shanthijuniorsplayschool.in/#enquiry</loc>
     <lastmod>2026-04-29</lastmod>
@@ -92,7 +61,6 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- ── CONTACT ── -->
   <url>
     <loc>https://shanthijuniorsplayschool.in/#contact</loc>
     <lastmod>2026-04-29</lastmod>
